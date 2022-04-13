@@ -1,5 +1,5 @@
 <?php
 echo 'hello';
 echo 'tui';
-echo 'lan 1';
+echo 'lan 2';
 ?>
