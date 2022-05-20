@@ -54,4 +54,4 @@
 </html>
 
 <?php
-echo 'hello 2 ku';
+echo 'every where';
