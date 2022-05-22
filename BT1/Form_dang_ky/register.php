@@ -1,3 +1,26 @@
+<?php
+
+    // xy ly lay du lieu qua method: POST --- GET tuong tu thou hihi
+    if (!empty($_POST)){
+        $Fullname = $_POST['fullname'];
+        $Email = $_POST['email'];
+        $Password = $_POST['password'];
+
+        echo $Fullname.'<br/>'.$Email.'<br/>'.$Password;
+    }
+
+    //xu ly lay du lieu qua method: GET
+    if (!empty($_POST)){
+        $Fullname = $_POST['fullname'];
+        $Email = $_POST['email'];
+        $Password = $_POST['password'];
+
+        echo $Fullname.'<br/>'.$Email.'<br/>'.$Password;
+    }
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,5 +76,3 @@
 </body>
 </html>
 
-<?php
-echo 'every where';

@@ -43,6 +43,14 @@
             </div>
         </div>
     </div>
+
+    <div class="ctn_02">
+        <div class="ct_02">
+            <div class="logo_bg">
+                <h2>LOKI</h2>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
