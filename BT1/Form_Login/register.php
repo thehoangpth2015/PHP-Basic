@@ -1,5 +1,5 @@
 <?php
-    require_once ('process_login.php');
+    require_once ('process_register.php');
 ?>
 
 <!DOCTYPE html>
@@ -36,17 +36,21 @@
 <body>
     <div class="register">
         <form method="POST">
-            <h5>Form Login</h5>
+            <h5>Form Register</h5>
+            <div class="col-auto">
+                <label class="form-label">Name</label>
+                <input type="text" name="fullname" class="form-control" value="">
+            </div>
             <div class="rgtRow">
                 <label class="form-label">User Name</label>
-                <input type="text" name="username" class="form-control" value="<?=$username?>">
+                <input type="text" name="username" class="form-control" value="">
             </div>
             <div class="rgtRow">
                 <label for="pwd" class="form-label">Password </label>
                 <input required="true" id="pwd" type="password" name="password" class="form-control">
             </div>
             
-            <button type="submit" class="btn btn-outline-success my-3 btn_submit">Login</button>  
+            <button type="submit" class="btn btn-outline-success my-3 btn_submit">Register</button>  
           
         </form>
     </div>
