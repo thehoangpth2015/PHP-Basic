@@ -1,22 +1,46 @@
 <?php
 
+    $fullname = $email = $password = $confirmation_password = '';
+    $checkPassword = true;
     // xy ly lay du lieu qua method: POST --- GET tuong tu thou hihi
     if (!empty($_POST)){
-        $Fullname = $_POST['fullname'];
-        $Email = $_POST['email'];
-        $Password = $_POST['password'];
+        if (isset($_POST['fullname'])){
+            $fullname = $_POST['fullname'];
+        }
+        // dua vo ham isset de kiem tra fullname co ton tai hay khong
+        if (isset($_POST['email'])){
+            $email = $_POST['email'];
+        }
+        if (isset($_POST['password'])){
+            $password = $_POST['password'];
+        }
+        if (isset($_POST['confirmation_password'])){
+            $confirmation_password = $_POST['confirmation_password'];
+        }
+        
+        if ($password == $confirmation_password){
+            //nhay sang trang moi -> welcome.php
+            //chuc mung #fullname# dang ky tai khoan thanh cong
+            header('Location: welcome.php?name='.$fullname); 
+            // ket noi sang welcome.php
+            die(); 
+            // no se dung chuong trinh lai khong chay nhung dong code ben duoi
+       
+        } else {
+            $checkPassword = false;
+        }
 
-        echo $Fullname.'<br/>'.$Email.'<br/>'.$Password;
+        //echo $fullname.'<br/>'.$email.'<br/>'.$password.'<br/>'.$confirmation_password.'<br/>';
     }
 
     //xu ly lay du lieu qua method: GET
-    if (!empty($_POST)){
-        $Fullname = $_POST['fullname'];
-        $Email = $_POST['email'];
-        $Password = $_POST['password'];
+    // if (!empty($_POST)){
+    //     $Fullname = $_POST['fullname'];
+    //     $Email = $_POST['email'];
+    //     $Password = $_POST['password'];
 
-        echo $Fullname.'<br/>'.$Email.'<br/>'.$Password;
-    }
+    //     echo $Fullname.'<br/>'.$Email.'<br/>'.$Password.'<br/>';
+    // }
     
 ?>
 
@@ -58,15 +82,19 @@
             <h5>Form Register</h5>
             <div class="col-auto">
                 <label class="form-label">Name</label>
-                <input type="text" name="fullname" class="form-control">
+                <input type="text" name="fullname" class="form-control" value="<?=$fullname?>">
             </div>
             <div class="rgtRow">
                 <label class="form-label">Email</label>
-                <input type="email" name="email" class="form-control">
+                <input type="email" name="email" class="form-control" value="<?=$email?>">
             </div>
             <div class="rgtRow">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control">
+                <label for="pwd" class="form-label">Password <?=$checkPassword? '':'<p style="color:red; font-weight:bold">Mật khẩu ko đún !!!</p>' ?></label>
+                <input required="true" id="pwd" type="password" name="password" class="form-control">
+            </div>
+            <div class="rgtRow">
+                <label for="confirmation_pwd" class="form-label">Confirmation Password</label>
+                <input required="true" id="confirmation_pwd" type="password" name="confirmation_password" class="form-control">
             </div>
             
             <button type="submit" class="btn btn-outline-success my-3 btn_submit">Register</button>  
